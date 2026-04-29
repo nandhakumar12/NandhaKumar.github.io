@@ -177,7 +177,7 @@ function App() {
           <span className="font-mono text-sm tracking-tighter text-white font-bold group-hover:text-emerald-400 transition-colors">Nandhakumar Thangaraju</span>
         </div>
         <div className="hidden md:flex gap-8 text-[10px] uppercase tracking-widest font-bold">
-          <a href="#" className="hover:text-emerald-400 transition-colors duration-300">Resume</a>
+          <a href="/NandhaKumar.github.io/NandhaKumar_ResumeDevOps.pdf" download="NandhaKumar_ResumeDevOps.pdf" className="hover:text-emerald-400 transition-colors duration-300">Resume</a>
           <a href="https://linkedin.com/in/nandhakumarthangaraj" target="_blank" rel="noopener noreferrer" className="hover:text-emerald-400 transition-colors duration-300">LinkedIn</a>
           <a href="https://github.com/nandhakumar12" target="_blank" rel="noopener noreferrer" className="hover:text-emerald-400 transition-colors duration-300">GitHub</a>
           <a href="mailto:nandhakumarthangaraj12@gmail.com" className="bg-white/5 px-3 py-1 rounded-full hover:bg-emerald-500 hover:text-black transition-all duration-300">Email</a>
