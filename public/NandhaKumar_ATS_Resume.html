@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nandhakumar Thangaraju – Cloud & DevOps Engineer Resume</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    /* =========================================================
+       ATS-SAFE STYLES — clean, single-column, parseable
+    ========================================================= */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black:   #0a0a0a;
+      --ink:     #111827;
+      --text:    #1f2937;
+      --muted:   #4b5563;
+      --accent:  #111827;
+      --line:    #d1d5db;
+      --bg:      #ffffff;
+    }
+
+    @page {
+      size: A4;
+      margin: 18mm 15mm;
+    }
+
+    body {
+      font-family: 'Inter', Arial, sans-serif;
+      font-size: 11pt;
+      line-height: 1.55;
+      color: var(--text);
+      background: var(--bg);
+      max-width: 850px;
+      margin: 0 auto;
+      padding: 40px 48px;
+    }
+
+    /* ── HEADER ──────────────────────────────────────────── */
+    .resume-header { text-align: center; margin-bottom: 20px; }
+    .resume-header h1 {
+      font-size: 26pt;
+      font-weight: 800;
+      color: var(--black);
+      letter-spacing: -0.5px;
+      margin-bottom: 4px;
+    }
+    .resume-header .title {
+      font-size: 13pt;
+      font-weight: 600;
+      color: #111827;
+      margin-bottom: 10px;
+    }
+    .contact-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 6px 18px;
+      font-size: 9.5pt;
+      color: var(--muted);
+    }
+    .contact-row a { color: var(--muted); text-decoration: none; }
+    .contact-row span::before { content: "•"; margin-right: 18px; }
+    .contact-row span:first-child::before { content: ""; margin-right: 0; }
+
+    /* ── SECTION ─────────────────────────────────────────── */
+    section { margin-top: 20px; }
+    .section-title {
+      font-size: 10pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: #000000;
+      border-bottom: 2px solid #111827;
+      padding-bottom: 4px;
+      margin-bottom: 12px;
+    }
+
+    /* ── SUMMARY ─────────────────────────────────────────── */
+    .summary p {
+      font-size: 10.5pt;
+      color: var(--text);
+      line-height: 1.65;
+    }
+
+    /* ── SKILLS ──────────────────────────────────────────── */
+    .skills-grid { display: grid; grid-template-columns: 140px 1fr; gap: 5px 12px; }
+    .skills-grid .label {
+      font-weight: 600;
+      font-size: 10pt;
+      color: var(--ink);
+    }
+    .skills-grid .value {
+      font-size: 10pt;
+      color: var(--text);
+    }
+
+    /* ── EXPERIENCE ──────────────────────────────────────── */
+    .job { margin-bottom: 20px; }
+    .job-header { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 4px; }
+    .job-title { font-size: 12pt; font-weight: 700; color: var(--black); }
+    .job-company { font-size: 10.5pt; font-weight: 600; color: var(--accent); margin-top: 1px; }
+    .job-meta { font-size: 9.5pt; color: var(--muted); text-align: right; }
+    .job-meta .dates { font-weight: 600; }
+    ul.bullets { margin-top: 8px; padding-left: 18px; }
+    ul.bullets li {
+      font-size: 10.5pt;
+      color: var(--text);
+      margin-bottom: 5px;
+      line-height: 1.6;
+    }
+    ul.bullets li::marker { color: #111827; }
+
+    /* ── PROJECTS ────────────────────────────────────────── */
+    .project { margin-bottom: 14px; }
+    .project-title { font-size: 11pt; font-weight: 700; color: var(--black); }
+    .project-tech { font-size: 9.5pt; color: #374151; font-style: italic; margin: 2px 0; }
+    .project p { font-size: 10.5pt; color: var(--text); }
+
+    /* ── CERTS & EDU ──────────────────────────────────────── */
+    .cert-item, .edu-item { margin-bottom: 10px; }
+    .cert-name, .edu-degree {
+      font-size: 11pt;
+      font-weight: 600;
+      color: var(--black);
+    }
+    .cert-issuer, .edu-school {
+      font-size: 10pt;
+      color: var(--muted);
+    }
+
+    /* ── PRINT ────────────────────────────────────────────── */
+    @media print {
+      body { padding: 0; }
+      a { color: inherit !important; }
+      .no-print { display: none !important; }
+      h1, .title, .section-title, .job-title, .job-company,
+      .cert-name, .edu-degree, .project-title, .label {
+        color: #000000 !important;
+      }
+    }
+
+    /* ── SCREEN PRINT BUTTON ─────────────────────────────── */
+    .print-bar {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      display: flex;
+      gap: 10px;
+      z-index: 999;
+    }
+    .print-btn {
+      background: #111827;
+      color: #fff;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-size: 13pt;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+      transition: background 0.2s;
+      font-family: 'Inter', Arial, sans-serif;
+    }
+    .print-btn:hover { background: #374151; }
+    .score-badge {
+      background: #f9fafb;
+      color: #111827;
+      border: 2px solid #111827;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-size: 12pt;
+      font-weight: 700;
+      font-family: 'Inter', Arial, sans-serif;
+    }
+    .print-instructions {
+      background: #fef3c7;
+      border: 1px solid #f59e0b;
+      border-radius: 8px;
+      padding: 10px 16px;
+      font-size: 10pt;
+      color: #92400e;
+      font-family: 'Inter', Arial, sans-serif;
+      max-width: 400px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ════════════════════════════════════════════════
+       HEADER
+  ════════════════════════════════════════════════ -->
+  <header class="resume-header">
+    <h1>Nandhakumar Thangaraju</h1>
+    <div class="title">Cloud &amp; DevOps Engineer | AWS · Kubernetes · Terraform · CI/CD</div>
+    <div class="contact-row">
+      <span>Dublin, Ireland</span>
+      <span>+353 89 439 1156</span>
+      <span><a href="mailto:nandhakumarthangaraj12@gmail.com">nandhakumarthangaraj12@gmail.com</a></span>
+      <span><a href="https://linkedin.com/in/nandhakumar-thangaraju-985492148" target="_blank">linkedin.com/in/nandhakumar-thangaraju</a></span>
+      <span><a href="https://github.com/nandhakumar12" target="_blank">github.com/nandhakumar12</a></span>
+      <span><a href="https://nandhakumar12.github.io/NandhaKumar.github.io" target="_blank">Portfolio</a></span>
+    </div>
+  </header>
+
+  <!-- ════════════════════════════════════════════════
+       PROFESSIONAL SUMMARY
+  ════════════════════════════════════════════════ -->
+  <section class="summary">
+    <div class="section-title">Professional Summary</div>
+    <p>
+      Results-driven Cloud &amp; DevOps Engineer with <strong>3.5 years of hands-on experience</strong>
+      designing, deploying, and operating production-grade infrastructure on AWS. Proven track record
+      of building robust CI/CD pipelines, managing Kubernetes clusters at scale, and enforcing
+      DevSecOps practices to deliver high-availability systems. Skilled in Infrastructure as Code
+      (Terraform), GitOps workflows (ArgoCD), container orchestration, and observability tooling.
+      Currently based in <strong>Dublin, Ireland</strong> and immediately available for DevOps Engineer
+      or Site Reliability Engineer (SRE) roles.
+    </p>
+  </section>
+
+  <!-- ════════════════════════════════════════════════
+       TECHNICAL SKILLS
+  ════════════════════════════════════════════════ -->
+  <section>
+    <div class="section-title">Technical Skills</div>
+    <div class="skills-grid">
+      <span class="label">Cloud Platforms</span>
+      <span class="value">Amazon Web Services (AWS) — EC2, EKS, S3, IAM, RDS, VPC, CloudWatch, Lambda, CloudFormation, Systems Manager</span>
+
+      <span class="label">Infrastructure as Code</span>
+      <span class="value">Terraform, AWS CloudFormation, Ansible</span>
+
+      <span class="label">Containers &amp; Orchestration</span>
+      <span class="value">Docker, Kubernetes (EKS), Helm Charts, ArgoCD (GitOps)</span>
+
+      <span class="label">CI/CD Pipelines</span>
+      <span class="value">Jenkins, GitHub Actions, Maven, Automated build / test / deploy workflows</span>
+
+      <span class="label">Observability</span>
+      <span class="value">CloudWatch, Prometheus, Grafana, AWS Systems Manager, Log aggregation &amp; alerting</span>
+
+      <span class="label">DevSecOps</span>
+      <span class="value">Trivy (container scanning), tfsec (IaC scanning), Bandit, SonarCloud, OWASP, Least-privilege IAM</span>
+
+      <span class="label">Networking</span>
+      <span class="value">VPC, Subnets, Route Tables, NACLs, Security Groups, Load Balancers, DNS, TCP/IP, CCNA-level networking</span>
+
+      <span class="label">Scripting &amp; Languages</span>
+      <span class="value">Bash / Shell Scripting, Python, YAML, JSON</span>
+
+      <span class="label">Version Control</span>
+      <span class="value">Git, GitHub, GitFlow, Branch strategies</span>
+
+      <span class="label">Operating Systems</span>
+      <span class="value">Linux (Ubuntu, RHEL, Amazon Linux), Windows Server</span>
+
+      <span class="label">Methodologies</span>
+      <span class="value">Agile / Scrum, GitOps, DevSecOps, SRE Principles (SLO/SLA/Error Budgets), Incident Management</span>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════
+       PROFESSIONAL EXPERIENCE
+  ════════════════════════════════════════════════ -->
+  <section style="page-break-before: always;">
+    <div class="section-title">Professional Experience</div>
+
+    <!-- Job 1 — TCTS -->
+    <div class="job">
+      <div class="job-header">
+        <div>
+          <div class="job-title">Cloud &amp; DevOps Engineer</div>
+          <div class="job-company">Tata Communications Transformation Services (TCTS)</div>
+        </div>
+        <div class="job-meta">
+          <div class="dates">Dec 2021 – Jan 2025</div>
+          <div>Chennai, India · Full-Time</div>
+        </div>
+      </div>
+      <ul class="bullets">
+        <li>Designed and provisioned scalable, highly-available AWS infrastructure (EKS, VPC, IAM, RDS, S3) using <strong>Terraform</strong> and <strong>CloudFormation</strong>, supporting microservices workloads with <strong>99.9% uptime SLA</strong>.</li>
+        <li>Built and maintained <strong>CI/CD pipelines</strong> using Jenkins and GitHub Actions, automating build, test, and deploy workflows across 10+ microservices and cutting deployment cycle time by <strong>~35%</strong>.</li>
+        <li>Containerised application services using <strong>Docker</strong> and orchestrated production workloads on <strong>Amazon EKS</strong>, managing cluster scaling, rolling updates, and health checks.</li>
+        <li>Implemented <strong>GitOps</strong> delivery using <strong>ArgoCD</strong> and <strong>Helm charts</strong>, enabling declarative, auditable deployments to Kubernetes clusters across multiple environments.</li>
+        <li>Enforced <strong>DevSecOps</strong> practices by integrating Trivy, tfsec, and SonarCloud into CI/CD pipelines, reducing critical vulnerability exposure and ensuring policy-compliant infrastructure changes.</li>
+        <li>Configured <strong>AWS IAM roles, policies, and least-privilege access controls</strong> for Jenkins, EKS, and cross-team AWS environments, reducing security surface area.</li>
+        <li>Provided expert-level support for AWS services, resolving escalated infrastructure incidents, improving mean time to recovery (MTTR), and maintaining high customer satisfaction scores.</li>
+        <li>Automated routine cloud operations using <strong>Python and Bash scripting</strong>, reducing manual toil by approximately <strong>4 hours/week per engineer</strong>.</li>
+      </ul>
+    </div>
+
+    <!-- Job 2 — Vinsys -->
+    <div class="job">
+      <div class="job-header">
+        <div>
+          <div class="job-title">AWS re/Start Instructor (Cloud &amp; DevOps)</div>
+          <div class="job-company">Vinsys IT Services Ltd</div>
+        </div>
+        <div class="job-meta">
+          <div class="dates">Oct 2025 – Jan 2026</div>
+          <div>Trichy, India · Contract</div>
+        </div>
+      </div>
+      <ul class="bullets">
+        <li>Delivered the <strong>AWS re/Start</strong> programme, teaching hands-on cloud fundamentals including EC2, S3, IAM, VPC, RDS, and CloudWatch to cohorts of 20+ students.</li>
+        <li>Conducted practical labs on configuring <strong>VPCs, subnets, route tables, NACLs, and security groups</strong>, reinforcing production networking patterns.</li>
+        <li>Applied <strong>AAA security principles and CIA triad</strong> concepts in real-world AWS scenarios, building security-first cloud literacy.</li>
+        <li>Automated cloud operational tasks using <strong>AWS Systems Manager and CloudFormation</strong> templates as part of capstone project delivery.</li>
+        <li>Mentored student teams through end-to-end capstone projects simulating production-grade AWS environments, achieving high programme completion rates.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════
+       KEY PROJECTS
+  ════════════════════════════════════════════════ -->
+  <section style="page-break-before: always;">
+    <div class="section-title">Key Projects</div>
+
+    <div class="project">
+      <div class="project-title">AI ATS Resume Analyser</div>
+      <div class="project-tech">Python · NLP · spaCy · Streamlit · GitHub Actions</div>
+      <p>Built a production-ready AI-powered ATS resume parsing and scoring system using Python and NLP. Automated keyword extraction, skills matching, and scoring against job descriptions. Deployed via CI/CD with GitHub Actions. <a href="https://github.com/nandhakumar12/ATS-Resume" target="_blank">github.com/nandhakumar12/ATS-Resume</a></p>
+    </div>
+
+    <div class="project">
+      <div class="project-title">Cognitive Adaptive eBook — DevOps &amp; Cloud Networking</div>
+      <div class="project-tech">Technical Writing · DevOps · Networking · Cloud Architecture · AI-Adaptive Learning</div>
+      <p>Authored a comprehensive cognitive-adaptive eBook covering DevOps practices, cloud architecture patterns, and networking fundamentals. Designed with adaptive learning principles to guide readers at varying skill levels through production-grade DevOps concepts. <a href="https://github.com/nandhakumar12/cognitive-adaptive-ebook" target="_blank">github.com/nandhakumar12/cognitive-adaptive-ebook</a></p>
+    </div>
+
+    <div class="project">
+      <div class="project-title">Alexa Voice Assistant with LLM Integration</div>
+      <div class="project-tech">AWS Lambda · Terraform · Amazon Cognito · IAM · API Gateway</div>
+      <p>Developed a production-grade voice assistant integrating Amazon Alexa with a Large Language Model (LLM) backend via serverless AWS Lambda. Provisioned infrastructure as code using Terraform with IAM least-privilege security controls.</p>
+    </div>
+
+    <div class="project">
+      <div class="project-title">YouTube Trending Video Analysis</div>
+      <div class="project-tech">Python · Pandas · Matplotlib · Seaborn · Jupyter Notebook · Kaggle Dataset</div>
+      <p>Performed end-to-end exploratory data analysis (EDA) on YouTube trending video data using Python. Cleaned and processed large datasets with Pandas, identified trending patterns by category, region, and engagement metrics, and visualised insights using Matplotlib and Seaborn charts.</p>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════
+       CERTIFICATIONS
+  ════════════════════════════════════════════════ -->
+  <section>
+    <div class="section-title">Certifications &amp; Training</div>
+
+    <div class="cert-item">
+      <div class="cert-name">AWS Certified Solutions Architect – Associate</div>
+      <div class="cert-issuer">Amazon Web Services</div>
+    </div>
+
+    <div class="cert-item">
+      <div class="cert-name">AWS re/Start Graduate</div>
+      <div class="cert-issuer">Amazon Web Services · Vinsys IT Services Ltd · 2025</div>
+    </div>
+
+    <div class="cert-item">
+      <div class="cert-name">Cisco Certified Network Associate (CCNA) — Network Fundamentals</div>
+      <div class="cert-issuer">Besant Technologies</div>
+    </div>
+
+    <div class="cert-item">
+      <div class="cert-name">Kubernetes for the Absolute Beginners</div>
+      <div class="cert-issuer">KodeKloud / Udemy</div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════
+       EDUCATION
+  ════════════════════════════════════════════════ -->
+  <section>
+    <div class="section-title">Education</div>
+
+    <div class="edu-item">
+      <div class="edu-degree">Master of Science in Cloud Computing <span style="font-weight:400; color:#4b5563;">· Jan 2026 – Ongoing</span></div>
+      <div class="edu-school">National College of Ireland (NCI), Dublin, Ireland</div>
+    </div>
+
+    <div class="edu-item">
+      <div class="edu-degree">DevOps and CCNA Training <span style="font-weight:400; color:#4b5563;">· Aug 2024 – Jan 2025</span></div>
+      <div class="edu-school">Besant Technologies, India</div>
+    </div>
+
+    <div class="edu-item">
+      <div class="edu-degree">Bachelor of Engineering in Computer Science <span style="font-weight:400; color:#4b5563;">· Aug 2017 – July 2021</span></div>
+      <div class="edu-school">Kumaraguru College of Technology, Coimbatore, India</div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════
+       ADDITIONAL
+  ════════════════════════════════════════════════ -->
+  <section>
+    <div class="section-title">Additional Information</div>
+    <div class="skills-grid">
+      <span class="label">Location</span>
+      <span class="value">Dublin, Ireland — Available for immediate start</span>
+      <span class="label">Work Authorisation</span>
+      <span class="value">Irish Stamp 2 Visa — Authorised to work up to 20 hours per week in Ireland</span>
+      <span class="label">Availability</span>
+      <span class="value">Immediate start</span>
+      <span class="label">Languages</span>
+      <span class="value">English (Professional), Tamil (Native)</span>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════
+       PRINT BUTTON (hidden on print)
+  ════════════════════════════════════════════════ -->
+  <div class="print-bar no-print">
+    <div style="display:flex; flex-direction:column; gap:8px; align-items:flex-end;">
+      <div class="print-instructions">⚠️ In the Print dialog → uncheck <strong>"Headers and footers"</strong> to remove date/URL</div>
+      <div style="display:flex; gap:10px;">
+        <div class="score-badge">ATS Score: ~86/100 ✅</div>
+        <button class="print-btn" onclick="window.print()">⬇ Download as PDF</button>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
