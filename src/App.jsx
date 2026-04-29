@@ -174,7 +174,7 @@ function App() {
       <nav className="max-w-7xl mx-auto flex justify-between items-center mb-12 border-b border-white/5 pb-6">
         <div className="flex items-center gap-2 group cursor-pointer">
           <div className="w-3 h-3 bg-emerald-500 rounded-full animate-pulse group-hover:scale-150 transition-transform"></div>
-          <span className="font-mono text-sm tracking-tighter text-white font-bold group-hover:text-emerald-400 transition-colors">Nandhakumar Thangaraju</span>
+          <span className="font-sans text-sm text-white font-bold group-hover:text-emerald-400 transition-colors">Nandhakumar Thangaraju</span>
         </div>
         <div className="hidden md:flex gap-8 text-[10px] uppercase tracking-widest font-bold">
           <a href="/NandhaKumar.github.io/NandhaKumar_ResumeDevOps.pdf" download="NandhaKumar_ResumeDevOps.pdf" className="hover:text-emerald-400 transition-colors duration-300">Resume</a>
@@ -198,7 +198,7 @@ function App() {
             <span className="w-1 h-1 bg-emerald-400 rounded-full"></span> Executive Summary
           </span>
           <h1 className="text-4xl md:text-5xl font-black text-white mb-4 leading-tight tracking-tighter">
-            Nandhakumar Thangaraju (Visa Status - Stamp 2)
+            Nandhakumar Thangaraju
           </h1>
           <h2 className="text-2xl md:text-3xl font-bold text-emerald-400 mb-4 leading-tight tracking-tighter">
             Cloud & DevOps Engineer | +353 894391156
